@@ -21,3 +21,14 @@ func CreateSite(c *gin.Context) {
 	c.IndentedJSON(http.StatusCreated,
 		gin.H{"msg": "ok"})
 }
+
+func ListSites(c *gin.Context) {
+	var site []model.Site
+
+	/*err := db.ListSites(&site)
+	if err != nil {
+		fmt.Println(err)
+	}*/
+	
+	c.JSON(http.StatusCreated, site)
+}

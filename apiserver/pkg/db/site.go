@@ -11,3 +11,10 @@ func CreateSite(s *model.Site) (err error) {
 	}
 	return nil
 }
+
+func ListSites(s *[]model.Site) (err error) {
+	if err = database.DB.Find(&s).Error; err != nil {
+		return err
+	}
+	return nil
+}
