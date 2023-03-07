@@ -10,6 +10,7 @@ func Setup() *gin.Engine {
 	
 	r.GET("/", api.GetInfo)
 	r.GET("/health", api.Health)
-
+	
+	r.POST("/site", api.CreateSite)
 	return r
 }

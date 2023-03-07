@@ -4,6 +4,8 @@ import (
 	"log"
 	"gorm.io/gorm"
     "gorm.io/driver/sqlite"
+
+	"github.com/zulcss/edged/shared/model"
 )
 
 var DB *gorm.DB
@@ -15,6 +17,9 @@ func InitDatabase() {
     if err != nil {
             panic("Failed to open database")
     }
+
+	// Create datbases
+	database.AutoMigrate(&model.Site{})
 
 	DB = database
 }
