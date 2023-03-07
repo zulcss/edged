@@ -7,6 +7,8 @@ import (
 
 func Setup() *gin.Engine {
 	r := gin.Default()
+	
 	r.GET("/", api.GetInfo)
+	r.GET("/health", api.Health)
 	return r
 }
