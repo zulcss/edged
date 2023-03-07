@@ -10,5 +10,6 @@ func Setup() *gin.Engine {
 	
 	r.GET("/", api.GetInfo)
 	r.GET("/health", api.Health)
+
 	return r
 }
