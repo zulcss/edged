@@ -19,7 +19,7 @@ func CreateSite(c *gin.Context) {
 		fmt.Println("Failed: ", err)
 	}
 	c.IndentedJSON(http.StatusCreated,
-		gin.H{"msg": "ok"})
+		gin.H{"Data": "ok"})
 }
 
 func ListSites(c *gin.Context) {
@@ -29,7 +29,7 @@ func ListSites(c *gin.Context) {
 	if err != nil {
 		fmt.Println(err)
 		c.IndentedJSON(http.StatusCreated,
-		gin.H{"msg": "failed"})
+		gin.H{"Data": "failed"})
 	}
 	c.JSON(http.StatusCreated, site)
 }
