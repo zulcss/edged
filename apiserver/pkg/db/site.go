@@ -25,3 +25,10 @@ func GetSite(s *model.Site, name string) (err error) {
 	}
 	return nil
 }
+
+func DeleteSite(s *model.Site, name string) (err error) {
+	if err := database.DB.Where("name=?", name).Delete(&s).Error; err != nil {
+		return err
+	}
+	return nil
+}
