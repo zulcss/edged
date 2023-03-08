@@ -33,3 +33,14 @@ func ListSites(c *gin.Context) {
 	}
 	c.JSON(http.StatusCreated, site)
 }
+
+func GetSite(c *gin.Context) {
+	var site model.Site
+	name := c.Params.ByName("name")
+	err := db.GetSite(&site, name)
+	if err != nil {
+		fmt.Println(err)
+	}
+	
+	c.JSON(http.StatusCreated, site)
+}

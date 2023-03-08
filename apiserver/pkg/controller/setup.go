@@ -13,6 +13,6 @@ func Setup() *gin.Engine {
 	
 	r.POST("/site", api.CreateSite)
 	r.GET("/site", api.ListSites)
-	r.GET("/site:id", api.GetSite)
+	r.GET("/site/:name", api.GetSite)
 	return r
 }

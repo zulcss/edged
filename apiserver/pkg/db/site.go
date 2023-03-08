@@ -18,3 +18,10 @@ func ListSites(s *[]model.Site) (err error) {
 	}
 	return nil
 }
+
+func GetSite(s *model.Site, name string) (err error) {
+	if err := database.DB.Where("name=?", name).First(&s).Error; err != nil {
+		return err
+	}
+	return nil
+}
