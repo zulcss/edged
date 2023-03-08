@@ -25,10 +25,11 @@ func CreateSite(c *gin.Context) {
 func ListSites(c *gin.Context) {
 	var site []model.Site
 
-	/*err := db.ListSites(&site)
+	err := db.ListSites(&site)
 	if err != nil {
 		fmt.Println(err)
-	}*/
-	
+		c.IndentedJSON(http.StatusCreated,
+		gin.H{"msg": "failed"})
+	}
 	c.JSON(http.StatusCreated, site)
 }

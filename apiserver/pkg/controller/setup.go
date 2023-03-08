@@ -12,6 +12,7 @@ func Setup() *gin.Engine {
 	r.GET("/health", api.Health)
 	
 	r.POST("/site", api.CreateSite)
-	r.GET("/site", api.ListSitesapiserver/pkg/controller/setup.go )
+	r.GET("/site", api.ListSites)
+	r.GET("/site:id", api.GetSite)
 	return r
 }
