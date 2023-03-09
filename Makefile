@@ -1,4 +1,4 @@
-.PHONY: server client clean
+.PHONY: server client clean docker
 
 clean:
 	rm -rf bin
@@ -8,3 +8,6 @@ server:
 
 client:
 	go build -o bin/stx client/main.go
+
+docker:
+	docker build -t edged .
