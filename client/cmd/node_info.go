@@ -11,7 +11,7 @@ var nodeInfoCmd = &cobra.Command{
 	Use:	"info",
 	Short:	"Show rest-api information",
 	Run: func(cmd *cobra.Command, args []string) {
-		c := client.NewClient()
+		c := client.NewClient(Endpoint)
 		node, err := c.GetInfo()
 		if err != nil {
 			fmt.Println(err)

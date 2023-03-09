@@ -10,7 +10,7 @@ var siteInfoCmd = &cobra.Command{
 	Use:	"info",
 	Short:	"site info",
 	Run:  func(cmd *cobra.Command, args []string) {
-		c := client.NewClient()
+		c := client.NewClient(Endpoint)
 		c.GetSite(Name)
 	},
 }

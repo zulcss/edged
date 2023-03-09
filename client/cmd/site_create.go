@@ -9,7 +9,7 @@ var siteCreateCmd = &cobra.Command{
 	Use:	"create",
 	Short:	"create a new site",
 	Run:  func(cmd *cobra.Command, args []string) {
-		c := client.NewClient()
+		c := client.NewClient(Endpoint)
 		c.CreateSite(Name)
 	},
 }

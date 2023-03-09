@@ -10,7 +10,7 @@ var siteListCmd = &cobra.Command{
 	Use:	"list",
 	Short:	"List sites available",
 	Run:  func(cmd *cobra.Command, args []string) {
-		c := client.NewClient()
+		c := client.NewClient(Endpoint)
 		c.ListSites()
 	},
 }

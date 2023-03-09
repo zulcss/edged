@@ -11,7 +11,7 @@ var nodeHealthCmd = &cobra.Command{
 	Use:	"health",
 	Short:	"Query node health",
 	Run: func(cmd *cobra.Command, args []string) {
-		c := client.NewClient()
+		c := client.NewClient(Endpoint)
 		node, err := c.GetStatus()
 		if err != nil {
 			fmt.Println(err)

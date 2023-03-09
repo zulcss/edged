@@ -9,7 +9,7 @@ var siteRemoveCmd = &cobra.Command{
 	Use:	"remove",
 	Short:	"Remove a site",
 	Run:  func(cmd *cobra.Command, args []string) {
-		c := client.NewClient()
+		c := client.NewClient(Endpoint)
 		c.DeleteSite(Name)
 	},
 }

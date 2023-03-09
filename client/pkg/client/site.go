@@ -14,7 +14,7 @@ func (c *Client) ListSites() {
 
 	resp, err := c.R().
 		 SetSuccessResult(&sites). 
-		  Get("http://0.0.0.0:8080/site")
+		 Get(fmt.Sprintf("%s/site", c.Host))
 	if err != nil {
 		return 
 	}
@@ -34,7 +34,7 @@ func (c *Client) GetSite(site string) {
 	resp, err := c.R().
 		     SetPathParam("site", site).
 		     SetSuccessResult(&sites).
-		     Get("http://0.0.0.0:8080/site/{site}")
+		     Get(fmt.Sprintf("%s/site/{site}", c.Host))
 	if err != nil {
 		return 
 	}
@@ -51,7 +51,7 @@ func (c *Client) DeleteSite(site string) {
 	resp, err := c.R().
 		     SetPathParam("site", site).
 		     SetSuccessResult(&sites).
-		     Delete("http://0.0.0.0:8080/site/{site}")
+		     Delete(fmt.Sprintf("%s/site/{site}", c.Host))
 	if err != nil {
 		return 
 	}
@@ -69,7 +69,7 @@ func (c *Client) CreateSite(site string) {
 	resp, err := c.R().
 		SetSuccessResult(&result).
 		SetBody(&model.Site{Name: site, CreatedAt: timestamp}).
-		Post("http://0.0.0.0:8080/site")
+		Post(fmt.Sprintf("%s/site", c.Host))
 	if err != nil {
 		return 
 	}

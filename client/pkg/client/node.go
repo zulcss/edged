@@ -1,5 +1,7 @@
 package client
 
+import "fmt"
+
 type NodeHealth struct {
 	Status string `json:"status"`
 }
@@ -13,7 +15,7 @@ func (c *Client) GetStatus() (*NodeHealth, error) {
 
 	_, err := c.R().
 		  SetSuccessResult(&node).
-		  Get("http://0.0.0.0:8080/health")
+		  Get(fmt.Sprintf("%s/health", c.Host))
 	return node, err
 }
 
@@ -22,7 +24,7 @@ func (c *Client) GetInfo() (*NodeInfo, error) {
 
 	_, err := c.R().
 		  SetSuccessResult(&node).
-		  Get("http://0.0.0.0:8080/")
+		  Get(fmt.Sprintf("%s/", c.Host))
 	return node, err
 }
 
