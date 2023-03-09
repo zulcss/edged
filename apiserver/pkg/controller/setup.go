@@ -6,6 +6,7 @@ import (
 )
 
 func Setup() *gin.Engine {
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 	
 	r.GET("/", api.GetInfo)

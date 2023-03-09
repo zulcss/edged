@@ -14,9 +14,9 @@ func InitDatabase() {
 	log.Println("Initialize database...")
 
 	database, err := gorm.Open(sqlite.Open("edged.db"), &gorm.Config{})
-    if err != nil {
+    	if err != nil {
             panic("Failed to open database")
-    }
+    	}
 
 	// Create datbases
 	database.AutoMigrate(&model.Site{})
