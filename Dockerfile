@@ -1,10 +1,12 @@
-FROM debian:testing
+FROM debian:testing as build
 
 RUN apt-get update && \
     apt-get install -y golang build-essential ca-certificates
-RUN mkdir /go 
+
+FROM build as stx-client
+RUN mkdir -p /go
+ADD . /go
 WORKDIR /go
-COPY . .
-RUN make server && \
-    cp bin/edged /usr/sbin/edged && \
-    cp -rp etc/edged /etc
+RUN make client &&  \
+   cp bin/stx /usr/bin
+WORKDIR /

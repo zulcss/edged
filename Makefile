@@ -10,4 +10,4 @@ client:
 	go build -o bin/stx client/main.go
 
 docker:
-	docker build -t edged .
+	docker build -t stx-client .
