@@ -10,9 +10,9 @@ var (
 	IPAddress string
 )
 
-var serverRegisterCmd = &cobra.Command{
-	Use:	"register",
-	Short:	"Register a server",
+var serverCreateCmd = &cobra.Command{
+	Use:	"create",
+	Short:	"Create a server",
 	Run:  func(cmd *cobra.Command, args []string) {
 		c := client.NewClient(Endpoint)
 		c.CreateServer(ServerName, IPAddress)
@@ -20,8 +20,5 @@ var serverRegisterCmd = &cobra.Command{
 }
 
 func init() {
-	serverCmd.AddCommand(serverRegisterCmd)
-
-	rootCmd.PersistentFlags().StringVarP(&ServerName, "server", "s", "", "Server name to register")
-	rootCmd.PersistentFlags().StringVarP(&IPAddress, "ip-address", "i", "", "IP Address to register")
+	serverCmd.AddCommand(serverCreateCmd)
 }

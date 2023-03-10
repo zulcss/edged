@@ -11,4 +11,7 @@ var serverCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(serverCmd)
+
+	rootCmd.PersistentFlags().StringVarP(&ServerName, "server", "s", "", "Server name to register")
+	rootCmd.PersistentFlags().StringVarP(&IPAddress, "ip-address", "i", "", "IP Address to register")
 }
