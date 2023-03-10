@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/zulcss/edged";
+
+package edged;
+
+service Agent {
+	rpc Register (RegisterRequest) returns (RegisterReply) {}
+	rpc Unregister (RegisterRequest) returns (RegisterReply) {}
+}
+
+message RegisterRequest {
+	string server = 1;
+}
+
+message RegisterReply {
+	string message = 1;
+}
+	
