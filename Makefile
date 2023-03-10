@@ -1,4 +1,4 @@
-.PHONY: server client clean docker
+.PHONY: server client clean docker agent
 
 clean:
 	rm -rf bin
@@ -11,3 +11,6 @@ client:
 
 docker:
 	docker build -t stx-client .
+
+agent:
+	go build -o bin/agent agent/main.go

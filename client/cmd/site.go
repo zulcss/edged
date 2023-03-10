@@ -13,5 +13,5 @@ var siteCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(siteCmd)
-	rootCmd.PersistentFlags().StringVarP(&Name, "site", "s", "", "Site to add")
+	rootCmd.PersistentFlags().StringVarP(&Name, "site", "", "", "Site to add")
 }

@@ -16,5 +16,9 @@ func Setup() *gin.Engine {
 	r.GET("/site", api.ListSites)
 	r.GET("/site/:name", api.GetSite)
 	r.DELETE("/site/:name", api.DeleteSite)
+	
+	r.POST("/server", api.CreateServer)
+
 	return r
+
 }

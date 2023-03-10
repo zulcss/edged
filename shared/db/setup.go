@@ -26,6 +26,7 @@ func InitDatabase() {
 
 	// Create datbases
 	database.AutoMigrate(&model.Site{})
+	database.AutoMigrate(&model.Server{})
 
 	DB = database
 }
