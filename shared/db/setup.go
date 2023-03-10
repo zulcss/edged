@@ -24,7 +24,7 @@ func InitDatabase() {
             panic("Failed to open database")
     	}
 
-	// Create datbases
+	// Create Tables
 	database.AutoMigrate(&model.Site{})
 	database.AutoMigrate(&model.Server{})
 
