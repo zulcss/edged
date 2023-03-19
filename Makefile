@@ -1,4 +1,6 @@
-.PHONY: server client clean docker agent proto
+.PHONY: server client clean docker agent proto all
+
+all: server client
 
 clean:
 	rm -rf bin

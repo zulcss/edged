@@ -5,11 +5,6 @@ import (
         "github.com/zulcss/edged/client/pkg/client"
 )
 
-var (
-	ServerName string
-	IPAddress string
-)
-
 var serverRegisterCmd = &cobra.Command{
 	Use:	"create",
 	Short:	"Create a server",
